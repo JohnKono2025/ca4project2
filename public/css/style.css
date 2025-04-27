@@ -73,29 +73,29 @@ input[type=reset] {
 
 /* column */
 .contactform-column {
-    float: left;
-    width: 50%;
-    margin-top: 10px;
-    padding: 20px;
-  }
-  
-  /* row */
-  .contactform-row:after {
-    content: "";
-    display: table;
-    clear: both;
-    margin: 0 auto;
-  }
-  
-  
-  /* Contact us form text box */
-  input[type=text],
-  select,
-  textarea {
-    width: 100%;
-    padding: 18px;
-    border: 2px solid #909090;
-    margin-top: 12px;
-    margin-bottom: 32px;
-    resize: vertical;
-  }
+  float: left;
+  width: 50%;
+  margin-top: 10px;
+  padding: 20px;
+}
+
+/* row */
+.contactform-row:after {
+  content: "";
+  display: table;
+  clear: both;
+  margin: 0 auto;
+}
+
+
+/* Contact us form text box */
+input[type=text],
+select,
+textarea {
+  width: 100%;
+  padding: 18px;
+  border: 2px solid #909090;
+  margin-top: 12px;
+  margin-bottom: 32px;
+  resize: vertical;
+}
