@@ -5,7 +5,8 @@ const socket = require("socket.io");
 const PORT = 5000;
 const app = express();
 const server = app.listen(PORT, function () {
-  console.log(`Listening on port ${PORT}`);
+ console.log(`Listening on port ${PORT}`);
+ console.log("Socket.io Chat Server is running...");
 
 });
 
@@ -19,7 +20,11 @@ const io = socket(server);
 const activeUsers = new Set();
 
 io.on("connection", function (socket) {
-  console.log("Made socket connection");
+  //show in console that a user has connected
+  console.log('Made socket connection');
+  
+  
+  
 
 
   socket.on("new user", function (data) {
@@ -27,13 +32,15 @@ io.on("connection", function (socket) {
     activeUsers.add(data);
     //... is the the spread operator, adds to the set while retaining what was in there already
     io.emit("new user", [...activeUsers]);
+    
   });
 
   socket.broadcast.emit('newUserConnected', { userId: socket.userId });
-
+//this is the event that is emitted when a user disconnects
   socket.on("disconnect", function () {
       activeUsers.delete(socket.userId);
       io.emit("user disconnected", socket.userId);
+      console.log('user disconnected');
      
     });
 

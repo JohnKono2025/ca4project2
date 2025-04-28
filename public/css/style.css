@@ -63,11 +63,12 @@ body {
 /* contact form button */
 input[type=submit],
 input[type=reset] {
+border: none;
   width: 60px;
   height: 40px;
   text-align: center;
   font-size: 14px;
-  background-color: #454141;
+  background-color: #05a369;
   color: #fff;
 }
 
@@ -94,8 +95,26 @@ select,
 textarea {
   width: 100%;
   padding: 18px;
-  border: 2px solid #909090;
+  border: 2px solid  #d6f7eb;
   margin-top: 12px;
   margin-bottom: 32px;
   resize: vertical;
+}
+
+/* img banner*/
+.banner {
+    width: 100%;
+   display: block;
+  }
+  
+  /* Github Button*/
+  .button {
+  background-color:  #05a369;
+  color: white;
+  padding: 18px 34px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 6px 4px;
 }
