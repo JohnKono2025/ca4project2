@@ -21,6 +21,7 @@ const activeUsers = new Set();
 io.on("connection", function (socket) {
   console.log("Made socket connection");
 
+
   socket.on("new user", function (data) {
     socket.userId = data;
     activeUsers.add(data);
@@ -28,13 +29,17 @@ io.on("connection", function (socket) {
     io.emit("new user", [...activeUsers]);
   });
 
+  socket.broadcast.emit('newUserConnected', { userId: socket.userId });
+
   socket.on("disconnect", function () {
       activeUsers.delete(socket.userId);
       io.emit("user disconnected", socket.userId);
+     
     });
 
     socket.on("chat message", function (data) {
       io.emit("chat message", data);
   });
+  
 
 });

@@ -7,6 +7,7 @@ const inboxPeople = document.querySelector(".inbox__people");
 let newUserName;
 let userName = "";
 let id;
+
 const newUserConnected = function (data) {
     
    while (!newUserName) {
@@ -58,11 +59,13 @@ socket.on("new user", function (data) {
   data.map(function (user) {
           return addToUsersBox(user);
       });
+      alert("New user has joined chat ...");
 });
 
 //when a user leaves
 socket.on("user disconnected", function (userName) {
-  document.querySelector(`.${userName}-userlist`).remove();
+  document.querySelector('.${userName}-userlist').remove();
+  alert("has left the chat ...");
 });
 
 
