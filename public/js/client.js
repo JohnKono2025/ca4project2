@@ -4,15 +4,23 @@ const socket = io();
 
 const inboxPeople = document.querySelector(".inbox__people");
 
-
+let newUserName;
 let userName = "";
 let id;
 const newUserConnected = function (data) {
     
+   while (!newUserName) {
+    newUserName = prompt ("Please Enter Your User Name");
+   if (!newUserName)
+    {
+    alert("There is a Error with your username, please try again")
+   }
+  }
+  alert("Welcome, "+ newUserName+"!")
 
     //give the user a random unique id
     id = Math.floor(Math.random() * 1000000);
-    userName = 'user-' +id;
+    userName = 'user-' + newUserName;
     //console.log(typeof(userName));   
     
 
