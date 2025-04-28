@@ -59,13 +59,13 @@ socket.on("new user", function (data) {
   data.map(function (user) {
           return addToUsersBox(user);
       });
-      alert("New user has joined chat ...");
+      alert("New user has joined chat");
 });
 
 //when a user leaves
 socket.on("user disconnected", function (userName) {
-  document.querySelector('.${userName}-userlist').remove();
-  alert("has left the chat ...");
+  document.querySelector(`.${userName}-userlist`).remove();
+  alert("user has left the chat.");
 });
 
 
